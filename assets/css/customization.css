@@ -1,0 +1,69 @@
+.centerValiary {
+    height:100%;
+    display: flex; 
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+.text-center {
+    text-align: center;
+}
+.text-right {
+    text-align: right;
+}
+.text-left {
+    text-align: left;
+}
+.text-align-center {
+    text-align: center;
+}
+
+#green {
+    color: #26B7BC !important;
+}
+#pink {
+    color: #FE868E !important;
+}
+#yellow {
+    color: #FFBD3D !important;
+}
+#gray {
+    color: #AEAEAE !important;
+}
+#red {
+    color: #FF5A79 !important;
+}
+
+#orange {
+    background-color: #FF9447 !important;
+    border: #FF9447 !important;
+}
+#pink-bg {
+    background-color: #FE868E !important;
+    border: #FE868E !important;
+}
+
+
+/* message */
+.message-list-box {
+    border-radius: 11px !important;
+    border: 0.45px solid #26B7BC !important;
+    box-sizing: border-box;
+}
+
+/* starting-team-products */
+.starting-team-products-box {
+    background: #F5FEFF;
+    border: 0.5px solid #26B7BC !important;
+    box-sizing: border-box;
+    border-radius: 9px !important;
+}
+
+/* starting-team-build */
+.starting-team-build-box {
+    background: #F5F5F5;
+    border: 0.5px solid #BCBCBC !important;
+    box-sizing: border-box;
+    border-radius: 5px !important;
+}
