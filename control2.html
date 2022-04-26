@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>總後台管理 - 待處理訂單</title>
+    <title>總後台管理 - 管理員設定</title>
 
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&display=swap" rel="stylesheet">
@@ -22,7 +22,9 @@
 
     <link rel="stylesheet" href="assets/css/customization.css">
 
-
+    <script>
+        sessionStorage.setItem('sidebar', 8);
+    </script>
     <script src="https://kit.fontawesome.com/f8db84f08a.js" crossorigin="anonymous"></script>
 </head>
 
@@ -45,7 +47,7 @@
                     <div class="container">
                         <div class="col">
                             <div class="d-block" style="text-align: right;">
-                                <a class="btn btn-primary rounded-pill" href="cintrol-new.html"><i class="fa-solid fa-plus-circle"></i> 建立新管理員</a>
+                                <a class="btn btn-primary rounded-pill" href="control-new.html"><i class="fa-solid fa-plus-circle"></i> 建立新管理員</a>
                             </div>
                             <br/>
                         </div>
@@ -82,40 +84,24 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr>
+                                            <template>
+                                                <tr>
 
-                                                <td>2021/09/01</td>
-                                                <td>ABCDE</td>
-                                                <td>
-                                                    <a id="green"><i class="fa-solid fa-check"></i> 啟用</a>
-                                                </td>
-                                                <td>蔡草莓</td>
-                                                <td></td>
-                                                <td>
-                                                    <a class="btn btn-success rounded-pill mb-1" href="company-edit.html">
-                                                        查看
-                                                    </a>
+                                                    <td id="jtime">2021/09/01</td>
+                                                    <td id="acc">ABCDE</td>
+                                                    <td id="status">
+                                                        <a id="green"><i class="fa-solid fa-check"></i> 啟用</a>
+                                                    </td>
+                                                    <td id="mname">蔡草莓</td>
+                                                    <td id="mtxt"></td>
+                                                    <td id="check">
+                                                        <a class="btn btn-success rounded-pill mb-1" href="control-edit.html">
+                                                            查看
+                                                        </a>
 
-                                                </td>
-                                            </tr>
-                                            <tr>
-
-                                                <td>2021/09/01</td>
-                                                <td>ABCDE</td>
-                                                <td>
-                                                    <a style="color: #FE868E;"><i class="fa fa-ban"></i> 停用</a>
-                                                </td>
-                                                <td>蔡草莓</td>
-                                                <td></td>
-
-                                                <td>
-                                                    <a class="btn btn-success rounded-pill mb-1" href="company-edit.html">
-                                                        查看
-                                                    </a>
-
-                                                </td>
-                                            </tr>
-
+                                                    </td>
+                                                </tr>
+                                            </template>
 
 
                                         </tbody>
@@ -165,6 +151,8 @@
                     $("#sidebar").load("sidebar.html");
                 });
             </script>
+            <script src="controller/js/ajax.js"></script>
+            <script src="controller/js/control2.js"></script>
         </div>
 </body>
 
