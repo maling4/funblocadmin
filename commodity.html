@@ -56,16 +56,16 @@
                             <div class="col">
                                 <ul class="nav">
                                     <li class="nav-item">
-                                        <h5><a class="nav-link active" href="#" style="color: #26B7BC;">所有商品</a></h5>
+                                        <h5><a class="nav-link sbtn99" onclick="filter(99)" href="#" style="color: #26B7BC;">所有商品</a></h5>
                                     </li>
                                     <li class="nav-item">
-                                        <h5><a class="nav-link" href="#" style="color:  #AEAEAE;">上架中</a></h5>
+                                        <h5><a class="nav-link sbtn1" onclick="filter(1)" href="#" style="color:  #AEAEAE;">上架中</a></h5>
                                     </li>
                                     <li class="nav-item">
-                                        <h5><a class="nav-link" href="#" style="color:  #AEAEAE;">下架中</a></h5>
+                                        <h5><a class="nav-link sbtn0" onclick="filter(0)" href="#" style="color:  #AEAEAE;">下架中</a></h5>
                                     </li>
                                     <li class="nav-item">
-                                        <h5><a class="nav-link" href="#" style="color:  #AEAEAE;">暫停販售</a></h5>
+                                        <h5><a class="nav-link sbtn2" onclick="filter(2)" href="#" style="color:  #AEAEAE;">暫停販售</a></h5>
                                     </li>
                                 </ul>
                             </div>
@@ -76,16 +76,15 @@
                         <div class="row">
                             <div class="col">
                                 請選擇商品類型：
-                                <select>
-                                    <option>食品類(A)</option>
-                                    <option>生活用品(B)</option>
+                                <select class="g_class">
+                                    <option value="99"> -- </option>
                                 </select>
                                 <a class="btn btn-secondary rounded-pill" href="company-new.html">上架中</a>&nbsp&nbsp
                                 <a class="btn btn-secondary rounded-pill" href="company-new.html">下架中</a>
                             </div>
 
                             <div class="col">
-                                <input type="text" id="first-name" class="form-control" name="fname" placeholder="關鍵字搜尋...">
+                                <input type="text" id="first-name" class="form-control keyword" name="fname" placeholder="關鍵字搜尋...">
                             </div>
                         </div>
 
@@ -109,25 +108,25 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <template>
+
+                                        </tbody>
+                                        <template>
                                                 <tr>
                                                     <td>
                                                         <input type="checkbox" id="cbox1" value="first_checkbox">
                                                     </td>
-                                                    <td id="pid">PD00001</td>
-                                                    <td id="cname">怪獸冷凍食品</td>
-                                                    <td id="pname">加州迷你6吋 手工披薩</td>
-                                                    <td id="type">熱情夏威夷</td>
+                                                    <td id="pid"></td>
+                                                    <td id="cname"></td>
+                                                    <td id="pname"></td>
+                                                    <td id="type"></td>
                                                     <td id="status"><a id="green"><i class="fa-solid fa-check"></i> 上架中</a></td>
-                                                    <td id="cost">100</td>
-                                                    <td id="sale">150</td>
+                                                    <td id="cost"></td>
+                                                    <td id="sale"></td>
                                                     <td id="check">
                                                         <a class="btn btn-success rounded-pill mb-1" href="commodity-new.html">查看</a>
                                                     </td>
-                                            </tr>
-
+                                                </tr>
                                             </template>
-                                        </tbody>
                                     </table>
                                 </div>
                             </div>

@@ -272,14 +272,14 @@ FROM member_tier;
 -- 小販階級-insert
 -- #BEGIN[2.5.5]
 INSERT INTO member_tier
-(tcode, tname, quanity)
-VALUES(:tcode, :tname, :quanity);
+(tcode, tname, quantity)
+VALUES(:tcode, :tname, :quantity);
 -- #END
 
 -- 小販階級-update
 -- #BEGIN[2.5.6]
 UPDATE member_tier
-SET tcode= :tcode, tname = :tname, quanity = :quanity
+SET tcode= :tcode, tname = :tname, quantity = :quantity
 WHERE tid = :tid;
 -- #END
 
@@ -290,8 +290,9 @@ WHERE tid = :tid;
 -- #END
 
 -- 商品總攬-下架給JS篩選
+-- 0下架 1上架 2暫停販售
 -- #BEGIN[1.6.1]
-SELECT g.gid, m_name, gname, ver, g_status, p_imprice, p_offprice
+SELECT DISTINCT g.gid, m_name, gname, ver, class, g_status, p_imprice, p_offprice
 FROM goods g
 LEFT JOIN manufacturer ma
 ON ma.m_id = g.m_id
@@ -349,6 +350,20 @@ VALUES
 (:gid, '商品上架', '商品上架', NOW());
 -- #END
 
+-- 供分類頁與列表使用
+-- 商品分類
+-- #BEGIN[1.6.3]
+SELECT tid, tcode, tname, quantity, note
+FROM goods_tier;
+-- #END
+
+-- 商品分類
+-- #BEGIN[1.6.31]
+SELECT tid, tcode, tname, quantity, note
+FROM goods_tier
+WHERE tid = :tid;
+-- #END
+
 -- 價格設定
 -- 群組價格設定不懂-先跳過
 -- #BEGIN[2.6.3]
@@ -363,6 +378,19 @@ INSERT INTO goods
 (m_id, class, gname, ver, matdate, themosphere, place, img_path, stock, destxt, g_status) 
 VALUES
 (:m_id, :class, ,:gname, :ver, :matdate, :themosphere, :place, :img_path, :stock, :destxt, 1);
+-- #END
+
+-- #BEGIN[2.6.5]
+UPDATE goods_tier
+SET tcode = :tcode, tname = :tname, note = :note
+WHERE tid = :tid;
+-- #END
+
+-- #BEGIN[2.6.6]
+INSERT INTO goods_tier 
+(tcode, tname, quantity, note) 
+VALUES
+(:tcode, :tname, :quantity, :note);
 -- #END
 
 -- 廠商總攬
@@ -417,17 +445,18 @@ SELECT tid, tcode, tname, quantity
 FROM manu_tier;
 -- #END
 
+
 -- 小販階級-insert
 -- #BEGIN[2.7.5]
 INSERT INTO manu_tier
-(tcode, tname, quanity)
-VALUES(:tcode, :tname, :quanity);
+(tcode, tname, quantity)
+VALUES(:tcode, :tname, :quantity);
 -- #END
 
 -- 小販階級-update
 -- #BEGIN[2.7.6]
 UPDATE manu_tier
-SET tcode= :tcode, tname = :tname, quanity = :quanity
+SET tcode= :tcode, tname = :tname, quantity = :quantity
 WHERE tid = :tid;
 -- #END
 
