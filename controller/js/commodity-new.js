@@ -9,7 +9,7 @@ function set_table() {
 
     //select id?
     let obj = {
-        ':m_id': urlParams.get('id'),
+        ':m_id': urlParams.get('mid'),
     }
 
 

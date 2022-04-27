@@ -300,9 +300,15 @@ LEFT JOIN list_cont lc
 ON lc.gid = g.gid;
 -- #END
 
+-- #BEGIN[1.6.11]
+SELECT m_id, m_name
+FROM manufacturer
+WHERE m_status  = 1;
+-- #END
+
 -- 商品資訊-查看
 -- #BEGIN[1.6.2]
-SELECT ma.m_name, p_class, gname, ver, matdate, themosphere, place, img_path, stock, destxt
+SELECT g_status, ma.m_name, class, gname, ver, matdate, themosphere, place, img_path, stock, destxt
 FROM goods g
 LEFT JOIN manufacturer ma
 ON ma.m_id = g.m_id
@@ -323,31 +329,33 @@ WHERE gid = :gid;
 -- 商品下架
 -- #BEGIN[2.6.1]
 UPDATE goods
-SET m_status = 0
+SET g_status = 0
 WHERE gid = :gid;
 -- #END
 
 -- 商品下架紀錄
 -- #BEGIN[2.6.11]
 INSERT INTO goods_record
-(gid, r_type, r_desc, r_time)
+(gid, r_type, r_desc, r_time, aid)
 VALUES
-(:gid, '商品下架', '商品下架', NOW());
+(:gid, '商品下架', '商品下架', NOW(), :aid);
 -- #END
+
+
 
 -- 商品上架
 -- #BEGIN[2.6.2]
 UPDATE goods
-SET m_status = 1
+SET g_status = 1
 WHERE gid = :gid;
 -- #END
 
 -- 商品上架紀錄
 -- #BEGIN[2.6.21]
 INSERT INTO goods_record
-(gid, r_type, r_desc, r_time)
+(gid, r_type, r_desc, r_time, aid)
 VALUES
-(:gid, '商品上架', '商品上架', NOW());
+(:gid, '商品上架', '商品上架', NOW(), :aid);
 -- #END
 
 -- 供分類頁與列表使用
@@ -380,17 +388,35 @@ VALUES
 (:m_id, :class, ,:gname, :ver, :matdate, :themosphere, :place, :img_path, :stock, :destxt, 1);
 -- #END
 
+-- 商品分類-修改
 -- #BEGIN[2.6.5]
 UPDATE goods_tier
 SET tcode = :tcode, tname = :tname, note = :note
 WHERE tid = :tid;
 -- #END
 
+-- 商品分類-新增
 -- #BEGIN[2.6.6]
 INSERT INTO goods_tier 
 (tcode, tname, quantity, note) 
 VALUES
 (:tcode, :tname, :quantity, :note);
+-- #END
+
+-- 商品資訊-更新
+-- #BEGIN[2.6.7]
+UPDATE goods
+SET class = :class, gname = :gname, ver = :ver, matdate = :matdate,
+ themosphere = :themosphere, place = :place, img_path = :img_path, stock = :stock, destxt = :destxt
+WHERE gid = :gid;
+-- #END
+
+-- 商品更新紀錄
+-- #BEGIN[2.6.71]
+INSERT INTO goods_record
+(gid, r_type, r_desc, r_time, aid)
+VALUES
+(:gid, '資訊更新', '商品資訊更新', NOW(), :aid);
 -- #END
 
 -- 廠商總攬

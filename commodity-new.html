@@ -44,12 +44,7 @@
                 <div class="page-heading align-items-center">
                     <div class="row container">
                         <div class="col">
-                            <a class="btn btn-primary" href="order-pending.html"><i class="fa-solid fa-arrow-left"></i> 回列表</a>
-                        </div>
-                        <div class="col">
-                            <div class="d-block" style="text-align: right;">
-                                <a class="btn btn-secondary" href="#">上架</a>
-                            </div>
+                            <a class="btn btn-primary" href="commodity.html"><i class="fa-solid fa-arrow-left"></i> 回列表</a>
                         </div>
                     </div>
                     <br/>
@@ -113,8 +108,8 @@
                                                     <div class="col">
                                                         <br><br>
                                                         <div class="d-block" style="text-align: center;">
-                                                            <a class="btn btn-danger" href="order-pending.html">價格設定</a>
-                                                            <a class="btn btn-primary" onclick="ceditsend()" href="#">儲存</a>
+                                                            <a class="btn btn-danger" href="#">價格設定</a>
+                                                            <a class="btn btn-primary" onclick="ceditsend()" href="#" data-bs-toggle="modal" data-bs-target="#ModalCheck">儲存</a>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -132,31 +127,44 @@
                     </div>
 
 
-                    <div class="row ">
-                        <div class="col">
-                            <h5 class="m-0 " style="color: #26B7BC">商品資訊歷史紀錄</h5>
-                        </div>
-                    </div>
-                    <br>
-                    <div class="row ">
-                        <section class="container">
-                            <div class="container">
-                                <div class="card">
-                                    <div class="card-content">
-                                        <div class="card-body">
-                                            <div><a class="btn btn-danger rounded-pill mb-1">售動議價</a> 2022-01-22 13:26 小販底價更動從28元改為30元 - 由管理員1執行</div>
-                                            <div><a class="btn btn-success rounded-pill mb-1">進動議價</a> 2022-01-22 13:26 小販底價更動從28元改為30元 - 由管理員1執行</div>
-                                            <div><a class="btn btn-info rounded-pill mb-1">商品下架</a> 2022-01-22 13:26 小販底價更動從28元改為30元 - 由管理員1執行</div>
-                                            <div><a class="btn btn-secondary rounded-pill mb-1">新品上架</a> 2022-01-22 13:26 小販底價更動從28元改為30元 - 由管理員1執行</div>
+                    <!-- Vertically Centered modal Modal -->
+                    <div class="modal fade" id="ModalPrice" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered modal-dialog-centered modal-dialog-scrollable" role="document">
+                            <div class="modal-content text-center p-4">
+                                <div class="modal-body" style="margin: 30px;">
+
+                                    <p>確定要取消合作此廠商嗎?</p>
+
+                                    <div class="row px-4 mt-4">
+                                        <div class="col">
+                                            <a class="btn btn-secondary w-100" href="#" data-bs-dismiss="modal">取消</a>
+                                        </div>
+                                        <div class="col">
+                                            <!-- button trigger for  Vertically Centered modal -->
+                                            <button type="button" onclick="change_status(0)" class="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#ModalCheck">
+                                    確認
+                                </button>
+
 
                                         </div>
                                     </div>
                                 </div>
                             </div>
-
-                        </section>
-
+                        </div>
                     </div>
+
+                    <!-- Vertically Centered modal Modal -->
+                    <div class="modal fade" id="ModalCheck" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered modal-dialog-centered modal-dialog-scrollable" role="document">
+                            <div class="modal-content text-center p-4">
+                                <div class="modal-body">
+                                    <i class="fa-solid fa-circle-check fa-xl" id="green"></i>
+                                    <p class="checkmodaltxt" style="margin: 15px"> 新增商品完成 </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                     <!--code寫這裡-->
 
 

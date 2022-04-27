@@ -48,14 +48,15 @@
                         </div>
                         <div class="col">
                             <div class="d-block" style="text-align: right;">
-                                <a class="btn btn-secondary" href="#">上架</a>
+                                <a hidden class="btn btn-primary up" href="#" data-bs-toggle="modal" data-bs-target="#ModalStatus1">上架</a>
+                                <a hidden class="btn btn-secondary down" href="#" data-bs-toggle="modal" data-bs-target="#ModalStatus0">下架</a>
                             </div>
                         </div>
                     </div>
                     <br/>
                     <div class="row ">
                         <div class="col">
-                            <h5 class="m-0 " style="color: #26B7BC;text-align: center;">新增商品</h5><br/>
+                            <h5 class="m-0 " style="color: #26B7BC;text-align: center;">編輯商品</h5><br/>
                         </div>
                     </div>
                     <div class="row ">
@@ -74,47 +75,49 @@
                                                             <td>類別</td>
                                                             <td id="class" style="color: #26B7BC;">
                                                                 <select class="form-control g_class">
-                                                                    <option>請選擇</option>
                                                                 </select>
                                                             </td>
                                                         </tr>
                                                         <tr>
                                                             <td>品名</td>
-                                                            <td id="pname" style="color: #26B7BC;"><input type="text" class="form-control" id="basicInput" value=""></td>
+                                                            <td style="color: #26B7BC;"><input type="text" class="form-control pname" id="basicInput" value=""></td>
                                                             <td>型號口味</td>
-                                                            <td id="type" style="color: #26B7BC;"><select class="form-control">
-                                                                <option>請選擇</option>
-                                                            </select></td>
+                                                            <td style="color: #26B7BC;">
+                                                                <select class="form-control type">
+                                                                </select>
+                                                            </td>
                                                         </tr>
                                                         <tr>
                                                             <td>保固期限</td>
-                                                            <td id="enddate" style="color: #26B7BC;"><input type="text" class="form-control" id="basicInput" value=""></td>
+                                                            <td style="color: #26B7BC;"><input type="text" class="form-control enddate" id="basicInput" value=""></td>
                                                             <td>溫層</td>
-                                                            <td id="deli" style="color: #26B7BC;"><select class="form-control">
-                                                                <option>請選擇</option>
-                                                            </select></td>
+                                                            <td style="color: #26B7BC;">
+                                                                <select class="form-control deli">
+                                                                    
+                                                                </select>
+                                                            </td>
                                                         </tr>
                                                         <tr>
                                                             <td>產地</td>
-                                                            <td id="from" style="color: #26B7BC;"><input type="text" class="form-control" id="basicInput" value=""></td>
+                                                            <td style="color: #26B7BC;"><input type="text" class="form-control place" id="basicInput" value=""></td>
                                                             <td>圖片上傳</td>
                                                             <td id="img_path" style="color: #26B7BC;"><input type="date" class="form-control" id="basicInput" value=""></td>
                                                         </tr>
                                                         <tr>
                                                             <td>庫存數量</td>
-                                                            <td id="qnt" style="color: #26B7BC;"><input type="text" class="form-control" id="basicInput" value=""></td>
+                                                            <td style="color: #26B7BC;"><input type="text" class="form-control qnt" id="basicInput" value=""></td>
                                                         </tr>
                                                         <tr>
                                                             <td>商品介紹</td>
-                                                            <td id="ptxt" colspan="3" style="color: #26B7BC;"><input type="text" class="form-control" id="basicInput" value=""></td>
+                                                            <td colspan="3" style="color: #26B7BC;"><input type="text" class="form-control ptxt" id="basicInput" value=""></td>
 
                                                         </tr>
                                                     </table>
                                                     <div class="col">
                                                         <br><br>
                                                         <div class="d-block" style="text-align: center;">
-                                                            <a class="btn btn-danger" href="order-pending.html">價格設定</a>
-                                                            <a class="btn btn-primary" onclick="ceditsend()" href="#">儲存</a>
+                                                            <a class="btn btn-danger" href="#" data-bs-toggle="modal" data-bs-target="#Modal">價格設定</a>
+                                                            <a class="btn btn-primary" onclick="ceditsend()" href="#" data-bs-toggle="modal" data-bs-target="#ModalCheck">儲存</a>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -143,13 +146,15 @@
                             <div class="container">
                                 <div class="card">
                                     <div class="card-content">
-                                        <div class="card-body">
-                                            <div><a class="btn btn-danger rounded-pill mb-1">售動議價</a> 2022-01-22 13:26 小販底價更動從28元改為30元 - 由管理員1執行</div>
+                                        <div class="card-body record">
+                                        </div>
+                                        <template>
+                                            <div><a class="btn rounded-pill mb-1">售動議價</a> <span> </span> </div>
+                                            <!-- <div><a class="btn btn-danger rounded-pill mb-1">售動議價</a> 2022-01-22 13:26 小販底價更動從28元改為30元 - 由管理員1執行</div>
                                             <div><a class="btn btn-success rounded-pill mb-1">進動議價</a> 2022-01-22 13:26 小販底價更動從28元改為30元 - 由管理員1執行</div>
                                             <div><a class="btn btn-info rounded-pill mb-1">商品下架</a> 2022-01-22 13:26 小販底價更動從28元改為30元 - 由管理員1執行</div>
-                                            <div><a class="btn btn-secondary rounded-pill mb-1">新品上架</a> 2022-01-22 13:26 小販底價更動從28元改為30元 - 由管理員1執行</div>
-
-                                        </div>
+                                            <div><a class="btn btn-secondary rounded-pill mb-1">新品上架</a> 2022-01-22 13:26 小販底價更動從28元改為30元 - 由管理員1執行</div> -->
+                                        </template>
                                     </div>
                                 </div>
                             </div>
@@ -157,6 +162,103 @@
                         </section>
 
                     </div>
+
+                    <!-- Vertically Centered modal Modal -->
+                    <div class="modal fade" id="ModalCheck" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered modal-dialog-centered modal-dialog-scrollable" role="document">
+                            <div class="modal-content text-center p-4">
+                                <div class="modal-body">
+                                    <i class="fa-solid fa-circle-check fa-xl" id="green"></i>
+                                    <p class="checkmodaltxt" style="margin: 15px"> 儲存完成 </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <!-- Vertically Centered modal Modal -->
+                    <div class="modal fade" id="ModalXmark" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered modal-dialog-centered modal-dialog-scrollable" role="document">
+                            <div class="modal-content text-center p-4">
+                                <div class="modal-body">
+                                    <i class="fa-solid fa-circle-xmark fa-xl" id="pink"></i>
+                                    <p class="xmarkmodaltxt" style="margin: 15px"> 商品已下架</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Vertically Centered modal Modal -->
+                    <div class="modal fade" id="ModalPrice" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered modal-dialog-centered modal-dialog-scrollable" role="document">
+                            <div class="modal-content text-center p-4">
+                                <div class="modal-body" style="margin: 30px;">
+
+                                    <p>確定要取消合作此廠商嗎?</p>
+
+                                    <div class="row px-4 mt-4">
+                                        <div class="col">
+                                            <a class="btn btn-secondary w-100" href="#" data-bs-dismiss="modal">取消</a>
+                                        </div>
+                                        <div class="col">
+                                            <!-- button trigger for  Vertically Centered modal -->
+                                            <button type="button" onclick="change_status(0)" class="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#ModalCheck">
+                                    確認
+                                </button>
+
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <!-- Vertically Centered modal Modal -->
+                    <div class="modal fade" id="ModalStatus0" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered modal-dialog-centered modal-dialog-scrollable" role="document">
+                            <div class="modal-content text-center p-4">
+                                <div class="modal-body" style="margin: 30px;">
+
+                                    <p>確定要下架此商品嗎?</p>
+
+                                    <div class="row px-4 mt-4">
+                                        <div class="col">
+                                            <a class="btn btn-secondary w-100" href="#" data-bs-dismiss="modal">取消</a>
+                                        </div>
+                                        <div class="col">
+                                            <!-- button trigger for  Vertically Centered modal -->
+                                            <button type="button" onclick="change_status(0)" class="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#ModalXmark">確認</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Vertically Centered modal Modal -->
+                    <div class="modal fade" id="ModalStatus1" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered modal-dialog-centered modal-dialog-scrollable" role="document">
+                            <div class="modal-content text-center p-4">
+                                <div class="modal-body" style="margin: 30px;">
+
+                                    <p>確定要上架此商品嗎?</p>
+
+                                    <div class="row px-4 mt-4">
+                                        <div class="col">
+                                            <a class="btn btn-secondary w-100" href="#" data-bs-dismiss="modal">取消</a>
+                                        </div>
+                                        <div class="col">
+                                            <!-- button trigger for  Vertically Centered modal -->
+                                            <button type="button" onclick="change_status(1)" class="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#ModalCheck">確認</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                     <!--code寫這裡-->
 
 

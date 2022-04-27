@@ -7,9 +7,6 @@ $(document).ready(function() {
 
     var obj = get_user_id();
 
-    console.log(obj);
-
-
     /*-show name & id-*/
     $('.name-id').html(obj);
 });

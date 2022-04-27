@@ -5,7 +5,6 @@ $(document).ready(function() {
         if (e.keyCode == 13) {
             let g_class = $(".g_class").val();
             let keyword = $(".keyword").val();
-            console.log(keyword);
             set_table(sessionStorage.getItem(filter), g_class, keyword);
         }
     });
@@ -16,6 +15,8 @@ $(document).ready(function() {
     for (let i = 0; i < arr.length; i++) {
         $('select.g_class').append('<option>' + arr[i]['tname'] + '</option>');
     }
+
+    set_manu();
 });
 
 function filter(num) {
@@ -70,7 +71,7 @@ function set_table(status, g_class, search) {
                 if (arr[i]['gname'].includes(search)) {
 
 
-                    temp = $($('template').html()).clone();
+                    let temp = $($('template').html()).clone();
                     temp.find('#pid').html(arr[i]['gid']);
                     temp.find('#cname').html(arr[i]['m_name']);
                     temp.find('#pname').html(arr[i]['gname']);
@@ -91,4 +92,15 @@ function set_table(status, g_class, search) {
         }
     }
 
+}
+
+function set_manu() {
+    let arr = ajax(0, '1.6.11');
+    console.log(arr);
+    for (let i = 0; i < arr.length; i++)
+        $('.manu_class').append('<option value="' + arr[i]['m_id'] + '">' + arr[i]['m_name'] + '</option>');
+}
+
+function to_insert() {
+    location.href = 'commodity-new.html?mid=' + $('.manu_class').val();
 }

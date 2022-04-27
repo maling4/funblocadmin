@@ -48,7 +48,7 @@
                         <div class="col">
                             <div class="d-block" style="text-align: right;">
                                 <a class="btn btn-primary rounded-pill" href="commodity-type.html"><i class="fa-solid fa-plus-circle"></i> 商品分類</a>&nbsp&nbsp
-                                <a class="btn btn-primary rounded-pill" href="commodity-new.html"><i class="fa-solid fa-plus-circle"></i> 新增商品</a>&nbsp&nbsp
+                                <a class="btn btn-primary rounded-pill" href="#" data-bs-toggle="modal" data-bs-target="#ModalInsert"><i class="fa-solid fa-plus-circle"></i> 新增商品</a>&nbsp&nbsp
                             </div>
                             <br/>
                         </div>
@@ -158,6 +158,37 @@
                     </div>
 
                 </section>
+
+                <!-- Vertically Centered modal Modal -->
+                <div class="modal fade" id="ModalInsert" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered modal-dialog-centered modal-dialog-scrollable" role="document">
+                        <div class="modal-content text-center p-4">
+                            <div class="modal-body" style="margin: 30px;">
+
+                                <p>新增商品</p>
+
+                                <select class="manu_class">
+                                    <option> 請選擇廠商 </option>
+                                </select>
+
+                                <div class="row px-4 mt-4">
+                                    <div class="col">
+                                        <a class="btn btn-secondary w-100" href="#" data-bs-dismiss="modal">取消</a>
+                                    </div>
+                                    <div class="col">
+                                        <!-- button trigger for  Vertically Centered modal -->
+                                        <button type="button" onclick="to_insert()" class="btn btn-primary w-100">
+                                    確認
+                                </button>
+
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
             </div>
 
 
