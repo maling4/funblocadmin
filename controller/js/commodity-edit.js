@@ -7,11 +7,12 @@ const urlParams = new URLSearchParams(queryString);
 
 function set_table() {
 
-    //select id?
     let obj = {
-        ':m_id': urlParams.get('id'),
+        ':gid': urlParams.get('id'),
     }
 
+    let arr = ajax(obj, '1.6.2');
+    console.log(arr);
 
 
 }

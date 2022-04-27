@@ -83,7 +83,7 @@ function set_table(status, g_class, search) {
                         temp.find('#status').html('<a id="red"><i class="fa-solid fa-check"></i> 暫停販售</a>');
                     temp.find('#cost').html(arr[i]['p_imprice']);
                     temp.find('#sale').html(arr[i]['p_offprice']);
-                    temp.find('#check').html(`<a class="btn btn-success rounded-pill mb-1" href="commodity-new.html?id=${arr[i]['gid']}">查看</a>`);
+                    temp.find('#check').html(`<a class="btn btn-success rounded-pill mb-1" href="commodity-edit.html?id=${arr[i]['gid']}">查看</a>`);
 
                     $('tbody').append(temp);
                 }
