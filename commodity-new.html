@@ -21,12 +21,36 @@
     <link rel="shortcut icon" href="assets/images/favicon.svg" type="image/x-icon">
 
     <link rel="stylesheet" href="assets/css/customization.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
     <script>
         sessionStorage.setItem('sidebar', 5);
     </script>
     <script src="https://kit.fontawesome.com/f8db84f08a.js" crossorigin="anonymous"></script>
 </head>
+
+<style>
+    .insert-table .col-1,
+    .insert-table .col-2 {
+        align-self: center;
+        text-align: left;
+        white-space: nowrap;
+    }
+    
+    .insert-table .material-icons {
+        margin: 0;
+        padding: 0;
+        align-self: center;
+        color: #26B7BC;
+        flex: 0;
+    }
+    
+    .insert-table .row {
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+        padding: 10px;
+    }
+</style>
 
 <body>
     <div id="app">
@@ -62,50 +86,130 @@
                                             <div class="col">
                                                 <div class="d-block" style="text-align: center;">
                                                     <form id="form">
-                                                        <table>
-                                                            <tr>
-                                                                <td>廠商名稱</td>
-                                                                <td id="cname" style="color: #26B7BC;"></td>
-                                                                <td>類別</td>
-                                                                <td id="class" style="color: #26B7BC;">
-                                                                    <select class="form-control g_class">
-                                                                    <option>請選擇</option>
-                                                                </select>
-                                                                </td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>品名</td>
-                                                                <td style="color: #26B7BC;"><input type="text" class="form-control pname" id="basicInput" value=""></td>
-                                                                <td>型號口味</td>
-                                                                <td style="color: #26B7BC;"><input type="text" class="form-control type" id="basicInput" value=""></td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>保固期限</td>
-                                                                <td style="color: #26B7BC;"><input type="number" class="form-control enddate" id="basicInput" value=""></td>
-                                                                <td>溫層</td>
-                                                                <td style="color: #26B7BC;">
-                                                                    <select class="form-control deli">
-                                                                    <option value="">請選擇</option>
-                                                                    <option>常溫</option>
-                                                                    <option>冷凍</option>
-                                                                </select>
-                                                                </td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>產地</td>
-                                                                <td style="color: #26B7BC;"><input type="text" class="form-control place" id="basicInput" value=""></td>
-                                                                <td>圖片上傳</td>
-                                                                <td style="color: #26B7BC;"><input type="date" class="form-control img_path" id="basicInput" value=""></td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>庫存數量</td>
-                                                                <td style="color: #26B7BC;"><input type="number" class="form-control qnt" id="basicInput" value=""></td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>商品介紹</td>
-                                                                <td colspan="3" style="color: #26B7BC;"><input type="text" class="form-control ptxt" id="basicInput" value=""></td>
+                                                        <div class="insert-table row">
+                                                            <div class="col-md-6 col-12">
+                                                                <div class="row">
+                                                                    <div class="col-2">
+                                                                        廠商名稱
+                                                                    </div>
 
-                                                            </tr>
+                                                                    <div id="cname" class="col" style="color: #26B7BC; text-align: left; align-items: center; display: flex;">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-6 col-12">
+                                                                <div class="row">
+                                                                    <div class="col-2">
+                                                                        類&emsp;&emsp;別
+                                                                    </div>
+
+                                                                    <div id="class" class="col" style="color: #26B7BC;">
+                                                                        <select class="form-control g_class">
+                                                                        <option>請選擇</option>
+                                                                    </select>
+                                                                    </div>
+                                                                </div>
+
+                                                            </div>
+
+                                                            <div class="col-md-6 col-12">
+                                                                <div class="row">
+                                                                    <div class="col-2">
+                                                                        品&emsp;&emsp;名
+                                                                    </div>
+                                                                    <div class="col" style="color: #26B7BC;">
+                                                                        <input type="text" class="form-control pname" id="basicInput" value="">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="col-md-6 col-12">
+                                                                <div class="row">
+                                                                    <div class="col-2">
+                                                                        型號口味
+                                                                    </div>
+                                                                    <div class="col" style="color: #26B7BC;">
+                                                                        <input type="text" class="form-control type" id="basicInput" value="">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="col-md-6 col-12">
+                                                                <div class="row">
+                                                                    <div class="col-2">
+                                                                        保存期限
+                                                                    </div>
+                                                                    <div class="col" style="color: #26B7BC;">
+                                                                        <input type="number" class="form-control enddate" id="basicInput" value="">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="col-md-6 col-12">
+                                                                <div class="row">
+                                                                    <div class="col-2">
+                                                                        溫&emsp;&emsp;層
+                                                                    </div>
+                                                                    <div class="col" style="color: #26B7BC;">
+                                                                        <select class="form-control deli">
+                                                                            <option value="">請選擇</option>
+                                                                            <option>常溫</option>
+                                                                            <option>冷凍</option>
+                                                                        </select>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="col-md-6 col-12">
+                                                                <div class="row">
+                                                                    <div class="col-2">
+                                                                        產&emsp;&emsp;地
+                                                                    </div>
+                                                                    <div class="col" style="color: #26B7BC;">
+                                                                        <input type="text" class="form-control place" id="basicInput" value="">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="col-md-6 col-12">
+                                                                <div class="row">
+                                                                    <div class="col-2">
+                                                                        圖片上傳
+                                                                    </div>
+                                                                    <div class="col" style="color: #26B7BC;">
+                                                                        <input type="date" class="form-control img_path" id="basicInput" value="">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="col-md-6 col-12">
+                                                                <div class="row">
+                                                                    <div class="col-2">
+                                                                        庫存數量
+                                                                    </div>
+                                                                    <span class="material-icons col">add_circle</span>
+
+                                                                    <div class="col-2" style="color: #26B7BC;">
+                                                                        <input type="number" class="form-control qnt" id="basicInput" value="">
+                                                                    </div>
+                                                                    <span class="material-icons col">remove_circle</span>
+
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="col-12">
+                                                                <div class="row">
+                                                                    <div class="col-1">
+                                                                        商品介紹
+                                                                    </div>
+                                                                    <div class="col" colspan="3" style="color: #26B7BC;">
+                                                                        <input type="text" class="form-control ptxt" id="basicInput" value="">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+
                                                         </table>
                                                         <div class="col">
                                                             <br><br>
