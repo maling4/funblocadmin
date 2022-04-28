@@ -8,7 +8,6 @@ $(document).ready(function() {
 
     let mlist = ajax(0, '1.6.11');
     for (let i = 0; i < mlist.length; i++) {
-        console.log(mlist[i]['m_id']);
         if (mlist[i]['m_id'] == mid) {
             $('#cname').html(mlist[i]['m_name']);
             break;
@@ -31,8 +30,9 @@ function ceditsend() {
         ':place': $('.place').val(),
         ':img_path': '',
         ':stock': $('.qnt').val(),
-        ':dextxt': $('.ptxt').val()
+        ':destxt': $('.ptxt').val()
     }
+
     console.log(obj);
     ajax(obj, '2.6.4');
 
