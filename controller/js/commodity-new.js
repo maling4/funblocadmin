@@ -1,36 +1,40 @@
-$(document).ready(function() {
-    set_table();
-});
-
 const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
 
-function set_table() {
+$(document).ready(function() {
 
-    //select id?
-    let obj = {
-        ':m_id': urlParams.get('mid'),
+    let mid = urlParams.get('mid');
+
+
+    let mlist = ajax(0, '1.6.11');
+    for (let i = 0; i < mlist.length; i++) {
+        console.log(mlist[i]['m_id']);
+        if (mlist[i]['m_id'] == mid) {
+            $('#cname').html(mlist[i]['m_name']);
+            break;
+        }
     }
 
-
-
-}
+    let typearr = ajax(0, '1.6.3');
+    for (let i = 0; i < typearr.length; i++)
+        $('.g_class').append('<option>' + typearr[i]['tname'] + '</option>');
+});
 
 function ceditsend() {
     let obj = {
-        //':m_id': urlParams.get('id'),
-        ':m_id': $('#cname'),
-        ':class': $('#class').children('input').val(),
-        ':gname': $('#pname').children('input').val(),
-        ':ver': $('#type').children('input').val(),
-        ':matdate': $('#enddate').children('input').val(),
-        ':themosphere': $('#deli').children('input').val(),
-        ':place': $('#from').children('input').val(),
-        ':img_path': $('#img_path').children('input').val(),
-        ':stock': $('#qnt').children('input').val(),
-        ':dextxt': $('#ptxt').children('input').val(),
+        ':m_id': urlParams.get('mid'),
+        ':class': $('.g_class').val(),
+        ':gname': $('.pname').val(),
+        ':ver': $('.type').val(),
+        ':matdate': $('.enddate').val(),
+        ':themosphere': $('.deli').val(),
+        ':place': $('.place').val(),
+        ':img_path': '',
+        ':stock': $('.qnt').val(),
+        ':dextxt': $('.ptxt').val()
     }
     console.log(obj);
     ajax(obj, '2.6.4');
-    //set_table();
+
+    $("#form").find("#reset-btn").click();
 }

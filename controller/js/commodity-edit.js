@@ -93,7 +93,7 @@ function ceditsend() {
         ':place': $('.place').val(),
         ':img_path': '',
         ':stock': $('.qnt').val(),
-        ':dextxt': $('.ptxt').val(),
+        ':dextxt': $('.ptxt').val()
     }
 
     ajax(obj, '2.6.7');

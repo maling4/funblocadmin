@@ -385,7 +385,7 @@ WHERE gid = :gid;
 INSERT INTO goods
 (m_id, class, gname, ver, matdate, themosphere, place, img_path, stock, destxt, g_status) 
 VALUES
-(:m_id, :class, ,:gname, :ver, :matdate, :themosphere, :place, :img_path, :stock, :destxt, 1);
+(:m_id, :class, :gname, :ver, :matdate, :themosphere, :place, :img_path, :stock, :destxt, 1);
 -- #END
 
 -- 商品分類-修改

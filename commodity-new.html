@@ -61,57 +61,61 @@
                                         <div class="card-body">
                                             <div class="col">
                                                 <div class="d-block" style="text-align: center;">
-
-                                                    <table>
-                                                        <tr>
-                                                            <td>廠商名稱</td>
-                                                            <td id="cname" style="color: #26B7BC;"></td>
-                                                            <td>類別</td>
-                                                            <td id="class" style="color: #26B7BC;">
-                                                                <select class="form-control g_class">
+                                                    <form id="form">
+                                                        <table>
+                                                            <tr>
+                                                                <td>廠商名稱</td>
+                                                                <td id="cname" style="color: #26B7BC;"></td>
+                                                                <td>類別</td>
+                                                                <td id="class" style="color: #26B7BC;">
+                                                                    <select class="form-control g_class">
                                                                     <option>請選擇</option>
                                                                 </select>
-                                                            </td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>品名</td>
-                                                            <td id="pname" style="color: #26B7BC;"><input type="text" class="form-control" id="basicInput" value=""></td>
-                                                            <td>型號口味</td>
-                                                            <td id="type" style="color: #26B7BC;"><select class="form-control">
-                                                                <option>請選擇</option>
-                                                            </select></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>保固期限</td>
-                                                            <td id="enddate" style="color: #26B7BC;"><input type="text" class="form-control" id="basicInput" value=""></td>
-                                                            <td>溫層</td>
-                                                            <td id="deli" style="color: #26B7BC;"><select class="form-control">
-                                                                <option>請選擇</option>
-                                                            </select></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>產地</td>
-                                                            <td id="from" style="color: #26B7BC;"><input type="text" class="form-control" id="basicInput" value=""></td>
-                                                            <td>圖片上傳</td>
-                                                            <td id="img_path" style="color: #26B7BC;"><input type="date" class="form-control" id="basicInput" value=""></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>庫存數量</td>
-                                                            <td id="qnt" style="color: #26B7BC;"><input type="text" class="form-control" id="basicInput" value=""></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>商品介紹</td>
-                                                            <td id="ptxt" colspan="3" style="color: #26B7BC;"><input type="text" class="form-control" id="basicInput" value=""></td>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>品名</td>
+                                                                <td style="color: #26B7BC;"><input type="text" class="form-control pname" id="basicInput" value=""></td>
+                                                                <td>型號口味</td>
+                                                                <td style="color: #26B7BC;"><input type="text" class="form-control type" id="basicInput" value=""></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>保固期限</td>
+                                                                <td style="color: #26B7BC;"><input type="number" class="form-control enddate" id="basicInput" value=""></td>
+                                                                <td>溫層</td>
+                                                                <td style="color: #26B7BC;">
+                                                                    <select class="form-control deli">
+                                                                    <option value="">請選擇</option>
+                                                                    <option>常溫</option>
+                                                                    <option>冷凍</option>
+                                                                </select>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>產地</td>
+                                                                <td style="color: #26B7BC;"><input type="text" class="form-control place" id="basicInput" value=""></td>
+                                                                <td>圖片上傳</td>
+                                                                <td style="color: #26B7BC;"><input type="date" class="form-control img_path" id="basicInput" value=""></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>庫存數量</td>
+                                                                <td style="color: #26B7BC;"><input type="number" class="form-control qnt" id="basicInput" value=""></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>商品介紹</td>
+                                                                <td colspan="3" style="color: #26B7BC;"><input type="text" class="form-control ptxt" id="basicInput" value=""></td>
 
-                                                        </tr>
-                                                    </table>
-                                                    <div class="col">
-                                                        <br><br>
-                                                        <div class="d-block" style="text-align: center;">
-                                                            <a class="btn btn-danger" href="#">價格設定</a>
-                                                            <a class="btn btn-primary" onclick="ceditsend()" href="#" data-bs-toggle="modal" data-bs-target="#ModalCheck">儲存</a>
+                                                            </tr>
+                                                        </table>
+                                                        <div class="col">
+                                                            <br><br>
+                                                            <div class="d-block" style="text-align: center;">
+                                                                <a class="btn btn-danger" href="#">價格設定</a>
+                                                                <a class="btn btn-primary" onclick="ceditsend()" href="#" data-bs-toggle="modal" data-bs-target="#ModalCheck">儲存</a>
+                                                            </div>
                                                         </div>
-                                                    </div>
+                                                        <input id="reset-btn" type="reset" value="Reset" class="d-none">
+                                                    </form>
                                                 </div>
                                             </div>
 
