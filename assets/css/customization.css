@@ -183,6 +183,14 @@ body * {
     border-radius: 0 0.7rem 0 0;
 }
 
+.table-block tbody tr {
+    border: solid #fff 1px;
+}
+
+.table-block tbody tr:hover {
+    background-color: rgba(38, 183, 188, 0.1);
+}
+
 ::placeholder {
     /* Chrome, Firefox, Opera, Safari 10.1+ */
     color: #AEAEAE;

@@ -104,3 +104,24 @@ function set_manu() {
 function to_insert() {
     location.href = 'commodity-new.html?mid=' + $('.manu_class').val();
 }
+
+function selectall(checkbox) {
+    if (checkbox.checked == true) {
+        $('.cbox').prop('checked', true);
+        $(".style1").attr("hidden", true);
+        $(".style2").attr("hidden", false);
+    } else {
+        $('.cbox').prop('checked', false);
+        $(".style1").attr("hidden", false);
+        $(".style2").attr("hidden", true);
+    }
+}
+
+
+function boxOnclick(checkbox) {
+    if (checkbox.checked == true) {
+        $('.tbox').prop('indeterminate', true);
+        $(".style1").attr("hidden", true);
+        $(".style2").attr("hidden", false);
+    }
+}
