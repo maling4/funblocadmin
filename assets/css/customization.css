@@ -202,12 +202,33 @@ body * {
 
 .table-block tbody tr td a.btn {
     font-size: 10px;
-    background-color: #48C97B;
     border: 0;
     height: 17.77px !important;
-    width: 58.25px !important;
+    min-width: 58.25px !important;
     border-radius: 27px !important;
     line-height: 5px;
+    white-space: nowrap;
+}
+
+.table-block tbody tr td a.btn-success {
+    background-color: #48C97B;
+}
+
+.table-type thead tr th {
+    font-size: 13px;
+    font-weight: 400;
+    color: #26B7BC;
+    text-align: center;
+    background-color: #E6E6E6;
+    padding: 20px;
+}
+
+.table-type thead tr th:first-child {
+    border-radius: 0.7rem 0 0 0;
+}
+
+.table-type thead tr th:last-child {
+    border-radius: 0 0.7rem 0 0;
 }
 
 ::placeholder {

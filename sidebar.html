@@ -1,3 +1,26 @@
+<style>
+    .logout {
+        border-radius: 5px;
+        background: #FFF;
+        border: 1px solid #40BEC2;
+    }
+    
+    .logout a {
+        color: #25396f;
+        font-size: 1rem;
+        padding: 0.7rem 1rem;
+        text-decoration: none;
+        transition: all .5s;
+    }
+    
+    .logout a:focus,
+    .logout a:hover,
+    .logout a:active {
+        color: #FFF;
+        background: #40BEC2;
+    }
+</style>
+
 <div class="sidebar-wrapper active" style="box-shadow: 7px 6px 0px rgba(233, 233, 233, 0.25); border-radius: 0px 50px 50px 0px;">
     <div class="sidebar-header">
         <div class="align-items-center">
@@ -9,7 +32,6 @@
             </div>
         </div>
     </div>
-
 
     <hr style="margin-left: 40px; margin-right: 40px; border: 0.5px solid #26B7BC;">
 
@@ -75,8 +97,8 @@
                 </a>
             </li>
 
-            <li class="sidebar-item active ">
-                <a href="manage-login.html" class='sidebar-link' style="text-align: center; display: block;">
+            <li class="sidebar-item logout">
+                <a href="manage-login.html" style="text-align: center; display: block;">
                     <span class="m-0">登出</span>
                 </a>
             </li>
