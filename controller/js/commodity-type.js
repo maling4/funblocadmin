@@ -9,11 +9,11 @@ function set_table() {
     for (let i = 0; i < arr.length; i++) {
 
         temp = $($('template').html()).clone();
-        temp.find('#edit').html('<a class="btn mb-1" href="#" onclick="set_modal(' + arr[i]['tid'] + ')" data-bs-toggle="modal" data-bs-target="#ModalCenter3">編輯</a>');
+        temp.find('#edit').html('<a class="btn mb-1" href="#" onclick="set_modal(' + arr[i]['tid'] + ')" data-bs-toggle="modal" data-bs-target="#ModalCenter3"><span class="material-icons">edit</span>編輯</a>');
         temp.find('#tcode').html(arr[i]['tcode']);
         temp.find('#tname').html(arr[i]['tname']);
         temp.find('#quantity').html(arr[i]['quantity']);
-
+        temp.find('.tid').html(arr[i]['tid']);
         $('.list tbody').append(temp);
     }
 
@@ -46,7 +46,10 @@ function set_modal(tid) {
     $('.emnote').val(arr[0]['note']);
 }
 
-
+function change_left_table(tr) {
+    let tid = $(tr).find('.tid').html();
+    cur_data(tid);
+}
 
 function update_tier() {
 

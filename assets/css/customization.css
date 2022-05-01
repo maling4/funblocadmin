@@ -231,6 +231,28 @@ body * {
     border-radius: 0 0.7rem 0 0;
 }
 
+.table-type tbody tr:nth-child(even) {
+    background-color: rgba(38, 183, 188, 0.1);
+}
+
+.table-type tbody a {
+    color: #26B7BC;
+    border: 1px solid #26B7BC;
+    height: 20px !important;
+    min-width: 62px !important;
+    white-space: nowrap;
+    font-size: 11px;
+    display: inline-flex;
+    line-height: 5px;
+}
+
+.table-type tbody a span {
+    color: #26B7BC;
+    font-size: 11px;
+    display: inline-flex;
+    line-height: 5px;
+}
+
 ::placeholder {
     /* Chrome, Firefox, Opera, Safari 10.1+ */
     color: #AEAEAE;
