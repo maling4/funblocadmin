@@ -183,12 +183,31 @@ body * {
     border-radius: 0 0.7rem 0 0;
 }
 
+.table-block tbody tr td {
+    border: 0;
+}
+
 .table-block tbody tr {
-    border: solid #fff 1px;
+    border-left: 1px solid #A8D9DC;
+    border-right: 1px solid #A8D9DC;
 }
 
 .table-block tbody tr:hover {
     background-color: rgba(38, 183, 188, 0.1);
+}
+
+.table-block tbody tr td {
+    font-size: 12px;
+}
+
+.table-block tbody tr td a.btn {
+    font-size: 10px;
+    background-color: #48C97B;
+    border: 0;
+    height: 17.77px !important;
+    width: 58.25px !important;
+    border-radius: 27px !important;
+    line-height: 5px;
 }
 
 ::placeholder {
