@@ -3,9 +3,7 @@ $(document).ready(function() {
 
     $('.keyword').keypress(function(e) {
         if (e.keyCode == 13) {
-            let g_class = $(".g_class").val();
-            let keyword = $(".keyword").val();
-            set_table(sessionStorage.getItem(filter), g_class, keyword);
+            table_change();
         }
     });
 
@@ -119,9 +117,15 @@ function selectall(checkbox) {
 
 
 function boxOnclick(checkbox) {
+    $('.tbox').prop('indeterminate', true);
     if (checkbox.checked == true) {
-        $('.tbox').prop('indeterminate', true);
         $(".style1").attr("hidden", true);
         $(".style2").attr("hidden", false);
     }
+}
+
+function table_change() {
+    let g_class = $(".g_class").val();
+    let keyword = $(".keyword").val();
+    set_table(sessionStorage.getItem(filter), g_class, keyword);
 }

@@ -10,7 +10,7 @@ $(document).ready(function() {
     /*-show name & id-*/
     $('.name-id').html(obj);
 
-    if (screen.width < 1200)
+    if ($(window).width() < 1200)
         $('#sidebar').removeClass('active');
 });
 

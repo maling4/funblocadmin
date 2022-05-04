@@ -73,11 +73,11 @@
 
                         </div>
 
-                        <div class="row">
-                            <div class="col-md-6 col-12 mb-3" style="align-self: center;">
+                        <div class="row top-tab mb-3">
+                            <div class="col-md-6 col-12" style="align-self: center;">
                                 <div class="style1">
                                     請選擇商品類型：
-                                    <select class="g_class">
+                                    <select class="g_class" onchange="table_change()">
                                     <option value="99"> -- </option>
                                 </select>
                                 </div>
@@ -89,14 +89,15 @@
 
                             </div>
 
-                            <div class="col mb-3">
-                                <input type="text" id="first-name" class="form-control keyword" name="fname" placeholder="關鍵字搜尋...">
+                            <div class="col search-block p-0">
+                                <input type="text" id="first-name" class="form-control search-textbox keyword" name="fname" placeholder="關鍵字搜尋...">
+                                <button class="search-btn" onclick="table_change()"><i class="fa-solid fa-magnifying-glass"></i></button>
                             </div>
                         </div>
 
                         <div class="card">
                             <div class="card-content">
-                                <div class="card-body">
+                                <div class="card-body overflow-auto">
                                     <table class="table table-hover align-items-center text-center table-block" id="table1">
                                         <thead>
                                             <tr style="color: #26B7BC;">

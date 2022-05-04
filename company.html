@@ -45,13 +45,6 @@
                 <section>
 
                     <div class="container">
-                        <div class="col">
-                            <div class="d-block" style="text-align: right;">
-                                <a class="btn btn-primary rounded-pill" href="company-new.html"><i class="fa-solid fa-plus-circle"></i> 新增廠商</a>&nbsp&nbsp
-
-                            </div>
-                            <br/>
-                        </div>
                         <div class="row">
                             <div class="col">
                                 <ul class="nav">
@@ -64,19 +57,29 @@
                                 </ul>
                             </div>
 
-                            <div class="col">
-                                <input type="text" id="first-name" class="form-control" name="fname" placeholder="關鍵字搜尋...">
+                            <div class="col-md col-12">
+                                <div class="d-block" style="text-align: right;">
+                                    <a class="btn btn-primary rounded-pill" href="company-new.html"><i class="fa-solid fa-plus-circle"></i> 新增廠商</a> </div>
+                            </div>
+                        </div>
+
+                        <div class="row mb-3 top-tab">
+                            <div class="col-md-8 col"></div>
+
+                            <div class="col search-block">
+                                <input type="text" id="first-name" class="form-control search-textbox" name="fname" placeholder="關鍵字搜尋...">
+                                <button class="search-btn"><i class="fa-solid fa-magnifying-glass"></i></button>
                             </div>
                         </div>
 
                         <div class="card">
                             <div class="card-content">
-                                <div class="card-body">
-                                    <table class="table table-striped align-items-center text-center" id="table1">
+                                <div class="card-body overflow-auto">
+                                    <table class="table table-block table-hover align-items-center text-center" id="table1">
                                         <thead>
                                             <tr style="color: #26B7BC;">
                                                 <th>
-                                                    <input type="checkbox" id="cbox1" value="first_checkbox">
+                                                    <input type="checkbox" class="tbox" onclick="selectall(this)">
                                                 </th>
                                                 <th>廠商編號</th>
                                                 <th>廠商名稱</th>
@@ -93,7 +96,7 @@
                                             <template>
                                                 <tr>
                                                     <td>
-                                                        <input type="checkbox" id="cbox1" value="first_checkbox">
+                                                        <input type="checkbox" class="cbox" onclick="boxOnclick()">
                                                     </td>
                                                     <td id="cid">FB00001</td>
                                                     <td id="cname">廠商一</td>

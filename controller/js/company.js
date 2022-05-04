@@ -26,3 +26,17 @@ function set_table() {
     }
 
 }
+
+function selectall(checkbox) {
+    if (checkbox.checked == true)
+        $('.cbox').prop('checked', true);
+    else
+        $('.cbox').prop('checked', false);
+
+}
+
+
+function boxOnclick() {
+    $('.tbox').prop('indeterminate', true);
+
+}

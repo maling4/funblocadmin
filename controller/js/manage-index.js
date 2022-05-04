@@ -8,10 +8,10 @@ function set_table() {
     var arr = ajax(0, '1.2.1');
     var arr1 = ajax(0, '1.2.2');
 
-    $('#pur').html(arr[0]['unsub']);
-    $('#allin').html(arr[0]['earn']);
-    $('#allout').html(arr[0]['cost']);
-    $('#allearn').html(arr[0]['profit']);
+    $('#pur').html(arr[0]['unsub'].replace(/\B(?=(\d{3})+(?!\d))/g, ","));
+    $('#allin').html(arr[0]['earn'].replace(/\B(?=(\d{3})+(?!\d))/g, ","));
+    $('#allout').html(arr[0]['cost'].replace(/\B(?=(\d{3})+(?!\d))/g, ","));
+    $('#allearn').html(arr[0]['profit'].replace(/\B(?=(\d{3})+(?!\d))/g, ","));
 
     for (let i = 0; i < arr1.length; i++) {
         let temp1 = $($('template').html()).clone();

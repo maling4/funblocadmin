@@ -77,10 +77,9 @@ function set_table() {
     $('#ccostall').html('0');
     $('#csaleall').html('0');
     $('#cearnall').html('0');
-    $('#gcostall').html(arr[0]['p_cost']);
-    $('#gsaleall').html(arr[0]['p_earn']);
-    $('#gearnall').html(arr[0]['p_profit']);
-
+    $('#gcostall').html(arr[0]['p_cost'].replace(/\B(?=(\d{3})+(?!\d))/g, ","));
+    $('#gsaleall').html(arr[0]['p_earn'].replace(/\B(?=(\d{3})+(?!\d))/g, ","));
+    $('#gearnall').html(arr[0]['p_profit'].replace(/\B(?=(\d{3})+(?!\d))/g, ","));
 
     $('#backacc').html(arr[0]['b_acc']);
 

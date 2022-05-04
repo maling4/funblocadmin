@@ -28,7 +28,8 @@ class db_query
 
         $reader = new read_file_func();
         $query = $reader->sql_parser($method, $this->ini_file);
-
+        print_r($query);
+        echo '<br>';
         $statement = $conn->prepare($query);
 
         /*-毋須$args帶值-*/

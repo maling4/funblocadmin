@@ -52,14 +52,14 @@ CREATE TABLE members(
     b_code char(5) NOT NULL DEFAULT '',
     b_acc varchar(20) NOT NULL DEFAULT '',
     m_status int(1) NOT NULL DEFAULT 0,
-    join_date DATETIME NOT NULL DEFAULT now(),
+    join_date DATETIME NOT NULL DEFAULT 0,
     m_note VARCHAR(100) NOT NULL DEFAULT '',
     primary key(uid)
 )ENGINE = MyISAM DEFAULT CHARSET = utf8;
 
 INSERT INTO members VALUES
-('ROOT000001', 1, 'root', sha2('root', 256), '根', 1, '2000-01-01', '0900000000', 'a123@gmail.com', '台北市 中山區 復興北路514巷38號', '700', '1234567890', 0, now(), ''),
-('54138', 1, 'u123', sha2('u123', 256), '', 1, '', '', '', '', '700', '1234567890', 0, now(), ''); 
+('ROOT000001', 1, 'root', sha2('root', 256), '根', 1, '2000-01-01', '0900000000', 'a123@gmail.com', '台北市 中山區 復興北路514巷38號', '700', '1234567890', 0, 0, ''),
+('54138', 1, 'u123', sha2('u123', 256), '', 1, '', '', '', '', '700', '1234567890', 0, 0, ''); 
 
 /*---異動紀錄---*/
 CREATE TABLE goods_record(
@@ -67,7 +67,7 @@ CREATE TABLE goods_record(
 	gid int(10) NOT NULL DEFAULT 0,
 	r_type char(10) NOT NULL DEFAULT '',
 	r_desc varchar(150) NOT NULL DEFAULT '',
-    r_time DATETIME NOT NULL DEFAULT now(),
+    r_time DATETIME NOT NULL DEFAULT 0,
     aid char(25) NOT NULL DEFAULT '',
     PRIMARY KEY(rid) 
 )ENGINE = MyISAM DEFAULT CHARSET = utf8;
@@ -135,7 +135,7 @@ VALUES
 CREATE TABLE open_list(
 	ol_id char(25) NOT NULL DEFAULT '',
     uid char(25) NOT NULL DEFAULT '',
-	ol_time DATETIME NOT NULL DEFAULT now(),
+	ol_time DATETIME NOT NULL DEFAULT 0,
 	ol_name varchar(25) NOT NULL DEFAULT '',
 	ol_cond int(5) NOT NULL DEFAULT 0,
 	ol_status int(2) NOT NULL DEFAULT 0,
@@ -276,8 +276,8 @@ CREATE TABLE group_list(
 	succ_way varchar(20) NOT NULL DEFAULT '',
 	gl_underqnt int(10) NOT NULL DEFAULT 0,
 	gl_transport varchar(10) NOT NULL DEFAULT '',
-	gl_stime DATETIME NOT NULL DEFAULT now(),
-	gl_etime DATETIME NOT NULL DEFAULT now(),
+	gl_stime DATETIME NOT NULL DEFAULT 0,
+	gl_etime DATETIME NOT NULL DEFAULT 0,
 	gl_dtime varchar(20) NOT NULL DEFAULT '',
 	g_status int(1) NOT NULL DEFAULT 0,
     gl_note varchar(100) NOT NULL DEFAULT '',
@@ -296,7 +296,7 @@ CREATE TABLE pro_wish(
 	pw_id int(30) NOT NULL AUTO_INCREMENT,
     uid char(25) NOT NULL DEFAULT '',
 	pw_destxt varchar(150) NOT NULL DEFAULT '',
-	pw_time DATETIME NOT NULL DEFAULT now(),
+	pw_time DATETIME NOT NULL DEFAULT 0,
 	pw_picpath varchar(50) NOT NULL DEFAULT '',
     primary key(pw_id)
 )ENGINE = MyISAM DEFAULT CHARSET = utf8;
